@@ -1,0 +1,14 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+  <!-- Normal (install-time) permission. No runtime prompt is needed. -->
+  <uses-permission android:name="android.permission.SET_WALLPAPER" />
+
+  <!-- Package visibility so canOpen() also works on Android 11+ devices. -->
+  <queries>
+    <intent><action android:name="android.settings.DISPLAY_SETTINGS" /></intent>
+    <intent><action android:name="android.intent.action.SET_WALLPAPER" /></intent>
+    <intent><action android:name="android.settings.NIGHT_DISPLAY_SETTINGS" /></intent>
+    <intent><action android:name="android.settings.ACCESSIBILITY_SETTINGS" /></intent>
+    <intent><action android:name="android.settings.SOUND_SETTINGS" /></intent>
+    <intent><action android:name="android.settings.HOME_SETTINGS" /></intent>
+  </queries>
+</manifest>
