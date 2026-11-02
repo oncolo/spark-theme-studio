@@ -11,7 +11,6 @@ import android.graphics.Paint
 import android.graphics.Shader
 import android.net.Uri
 import android.os.Build
-import expo.modules.kotlin.Exceptions
 import expo.modules.kotlin.exception.CodedException
 import expo.modules.kotlin.modules.Module
 import expo.modules.kotlin.modules.ModuleDefinition
@@ -28,7 +27,7 @@ import kotlin.math.sin
  */
 class SystemCustomizerModule : Module() {
   private val context
-    get() = appContext.reactContext ?: throw Exceptions.ReactContextLost()
+    get() = appContext.reactContext ?: throw CodedException("ERR_NO_CONTEXT", "React context is not available", null)
 
   override fun definition() = ModuleDefinition {
     Name("SystemCustomizer")
